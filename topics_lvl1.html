@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Questions About Life</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .question-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="question-card">
+            <h2 id="question"></h2>
+            <div class="btn-container">
+                <button id="nextButton">Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            "What is the meaning of life?",
+            "How can we find happiness?",
+            "What is the secret to a fulfilling life?",
+            "What is the purpose of our existence?",
+            "How do you define success in life?",
+            "What is the key to a balanced life?",
+            // Add more questions as needed
+        ];
+
+        const questionElement = document.getElementById("question");
+        const nextButton = document.getElementById("nextButton");
+
+        function getRandomQuestion() {
+            return questions[Math.floor(Math.random() * questions.length)];
+        }
+
+        function displayRandomQuestion() {
+            const randomQuestion = getRandomQuestion();
+            questionElement.textContent = randomQuestion;
+        }
+
+        nextButton.addEventListener("click", displayRandomQuestion);
+
+        // Call the function to display a random question when the page loads
+        displayRandomQuestion();
+    </script>
+</body>
+</html>
